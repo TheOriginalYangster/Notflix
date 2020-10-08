@@ -5,6 +5,7 @@ export type AppStateSlice = {
   loading: boolean;
   error: boolean;
   data: Record<any, any>[];
+  initialMovies: Record<any, any>[];
 };
 
 export type AppState = {
@@ -14,7 +15,8 @@ export type AppState = {
 export const initialState: AppStateSlice = {
   loading: false,
   error: false,
-  data: []
+  data: [],
+  initialMovies: [],
 };
 
 export const appSlice = createSlice({
@@ -27,8 +29,13 @@ export const appSlice = createSlice({
     });
     builder.addCase("app/pending", (state, action) => {});
 
-    builder.addCase("app/fulfilled", (state, action) => {});
+    builder.addCase("app/fulfilled", (state, action) => {
+      console.log('state', state)
+      console.log('action', action)
+    });
 
     builder.addCase("app/rejected", (state, action) => {});
   }
 });
+
+

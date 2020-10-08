@@ -1,4 +1,10 @@
+
 .App {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: 'Circular Std', Arial, sans-serif;
+  height: 100%;
+}
+
+.product-space {
+  height: 95%;
+  background: linear-gradient(rgba(0,0,0,1) 68%, rgba(66,66,66,1) 91%, rgba(173,173,173,1) 100%);
 }

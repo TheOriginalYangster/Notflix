@@ -1,0 +1,29 @@
+
+.landing-page-container {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+
+  
+  .search-area-container {
+    color: lightgrey;
+    height: auto;
+    flex: 1 1 auto;
+    position: relative;
+    
+    .search-area{
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 40%;
+      transform: translate(0%, -50%);
+      
+      .search-text{
+        
+      }
+    }
+  }
+
+  .carousel-container {
+  }
+}

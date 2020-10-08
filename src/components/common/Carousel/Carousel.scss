@@ -1,0 +1,14 @@
+
+.carousel {
+
+  padding: 2em 0;
+  overflow-y: visible;
+
+  .react-multiple-carousel__arrow--left {
+    left: calc(1%) !important;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    right: calc(1%) !important;
+  }
+}

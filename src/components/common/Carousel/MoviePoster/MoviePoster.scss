@@ -1,0 +1,21 @@
+
+.movie-poster {
+
+  width: 100%;
+  text-align: center;
+
+  img {
+    position: relative;
+    width: 200px;
+    height: 305px;
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0 -7px 30px black;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    &:hover{
+
+    }
+    
+  }
+}

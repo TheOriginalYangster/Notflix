@@ -1,17 +1,28 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { AppStateSlice } from "../store/reducer";
+import { Dispatch } from "redux";
 
-import { Button } from "./Button";
-import { AppState } from "../store/reducer";
+
+import { AppStateSlice, AppState } from "../store/reducer";
+import { fetchMovies } from "../store/actions";
+
+import { Button } from "./common/Button";
+import AppRoutes from "../routes/AppRoutes";
+import Header from "./layout/Header/Header"
 
 export function App() {
   const state = useSelector<AppState, AppStateSlice>((state) => state.app);
-  console.log(state);
+
+  useEffect(() => {
+    console.log('app mounted')
+  }, [])
+
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <Button />
+      <Header/>
+      <div className="product-space">
+        <AppRoutes />
+      </div>
     </div>
   );
 }

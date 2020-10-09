@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 
 import searchIcon from '../../../static/images/searchIcon.png'
 
+
 import './SearchBar.scss'
 
 

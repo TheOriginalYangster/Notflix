@@ -5,14 +5,13 @@ import NotflixLogo from '../../../static/images/NotflixLogo.png'
 import './Header.scss'
 
 const baseClass = 'header'
-const containerClass = `${baseClass}__container`
 const logoClass = `${baseClass}__logo`
 
 const Header = () => {
 
 
   return (
-    <div className={containerClass}>
+    <div className={baseClass}>
       <img src={NotflixLogo} className={logoClass}/>
     </div>
   )

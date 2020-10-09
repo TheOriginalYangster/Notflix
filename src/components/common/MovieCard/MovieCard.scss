@@ -1,0 +1,55 @@
+.movie-card {
+  width: 65%;
+  height: 12em;
+  background-color: grey;
+  padding: 4px;
+  margin: 0.75% auto;
+  border-radius: 5px;
+
+  &__container-top {
+    height: 100%;
+    display: flex;
+    
+
+    &__poster {
+      width: 15%;
+      
+      &__img-helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      img {
+        vertical-align: middle;
+        height: 11em;
+        width: 8em;
+      }
+    }
+
+    &__summary {
+      width: 85%;
+      display: grid;
+      grid-template-rows: 20% 20% 60%;
+
+      &__title-bar {
+        display: grid;
+        grid-template-columns: 65% 35%;
+
+        h2 {
+          margin: 0;
+        }
+
+        &__ratings {
+          vertical-align: middle;
+          img {
+            height: 1.5em;
+            width: auto;
+            margin: 0 5px 0 8px;
+          }
+        }
+      }
+
+    }
+
+  }
+}

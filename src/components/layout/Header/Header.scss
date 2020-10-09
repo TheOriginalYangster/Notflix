@@ -1,17 +1,16 @@
 
 .header{
-  
-  &__container {
-    background-color: #ba1004;
-    height: 6%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 
-    .header__logo {
-      width: auto;
-      height: auto;
-    }
+  background-color: #ba1004;
+  height: 6%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .header__logo {
+    width: auto;
+    height: auto;
   }
+
 }

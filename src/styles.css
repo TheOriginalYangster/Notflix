@@ -5,6 +5,7 @@
 }
 
 .product-space {
+  
   background-image: linear-gradient(rgba(0,0,0,1) 68%, rgba(66,66,66,1) 91%, rgba(173,173,173,1) 100%);
   background-attachment: fixed;
 }

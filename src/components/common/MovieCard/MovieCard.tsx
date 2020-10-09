@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import MetaLogo from '../../../static/images/metacriticLogo.png'
 import RTLogo from '../../../static/images/rottenTomatoesLogo.png'
 import IMDBLogo from '../../../static/images/imdbLogo.png'
+import NoPoster from '../../../static/images/NoPoster.jpg'
 
 import './MovieCard.scss'
 
@@ -49,7 +50,7 @@ const MovieCard = ({ movie }) => {
       <div className={topContainer}>
         <div className={poster}>
           <span className={imgHelper} />
-          <img src={Poster} />
+          <img src={Poster !== "N/A" ? Poster: NoPoster} />
         </div>
         <div className={summary}>
           <div className={titleBar}>

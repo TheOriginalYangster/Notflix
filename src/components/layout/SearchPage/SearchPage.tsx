@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppState } from '../../../store/reducer'
 
 import SearchBar from '../../common/SearchBar/SearchBar'
 import MovieCard from '../../common/MovieCard/MovieCard'
@@ -13,9 +15,8 @@ const searchContainerClass = `${baseClass}__search`
 const resultsContainerClass = `${baseClass}__results`
 const SearchPage = () => {
 
-  const results = searchResults
-
-  const movieCards = results.map(movie => <MovieCard movie={movie} />)
+  const state = useSelector<AppState, AppState>(state => state)
+  const results = state.data
 
   return (
     <div className={baseClass}>
@@ -23,7 +24,9 @@ const SearchPage = () => {
         <SearchBar/>
       </div>
       <div className={resultsContainerClass}>
-        {movieCards}
+        {results && results.length > 0 && (
+          <>{results.map(movie => <MovieCard movie={movie} />)}</>
+        )}
       </div>
     </div>
   )

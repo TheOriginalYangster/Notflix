@@ -5,7 +5,7 @@ export type AppState = {
   loading: boolean;
   error: boolean;
   data: Record<any, any>[];
-  initialMovies: Record<any, any>[];
+  carouselMovies: Record<any, any>[];
   searchText: string;
 };
 
@@ -13,7 +13,7 @@ export const initialState: AppState = {
   loading: false,
   error: false,
   data: [],
-  initialMovies: [],
+  carouselMovies: [],
   searchText: '',
 };
 
@@ -22,9 +22,12 @@ export const reducer = (state, action) => {
   switch(type){
     case "SEARCH_INPUT_CHANGE":
       return { ...state, searchText: payload }
-    case "SEARCH_SUBMIT":
-      console.log('NO PAYLOAD BUT:', state.searchText)
-      return state
+    case "SEARCH_SENT":
+      return { ...state, loading: true }
+    case "DATA_RECIEVED":
+      return { ...state, loading: false, data: payload }
+    case "BAD_SEARCH":
+      return { ...state, loading: false, }
     default:
       return state
   }

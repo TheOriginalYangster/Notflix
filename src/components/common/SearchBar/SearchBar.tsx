@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { withRouter } from 'react-router'
 import searchIcon from '../../../static/images/searchIcon.png'
 import { inputChanged, submitSearch } from '../../../store/actions'
 import { AppState } from '../../../store/reducer'
@@ -8,7 +9,7 @@ import './SearchBar.scss'
 
 
 
-const SearchBar = () => {
+const SearchBar = ({ history, location }) => {
 
   const dispatch = useDispatch()
   const state = useSelector<AppState, AppState>(state => state)
@@ -16,6 +17,7 @@ const SearchBar = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     dispatch(submitSearch())
+    if(location.pathname === "/") history.push('/search')
   }
 
   const onChange = (e) => {
@@ -34,4 +36,4 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar
+export default withRouter(SearchBar)

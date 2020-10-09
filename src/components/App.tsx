@@ -5,7 +5,6 @@ import { Dispatch } from "redux";
 
 
 import { AppState } from "../store/reducer";
-import { fetchMovies } from "../store/actions";
 
 import { Button } from "./common/Button";
 import AppRoutes from "../routes/AppRoutes";

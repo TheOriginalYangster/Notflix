@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom"
 import { Dispatch } from "redux";
 
 
@@ -18,11 +19,13 @@ export function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Header/>
-      <div className="product-space">
-        <AppRoutes />
+    <Router>
+      <div className="App">
+        <Header/>
+        <div className="product-space">
+          <AppRoutes />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }

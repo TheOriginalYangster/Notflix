@@ -1,10 +1,16 @@
 .movie-card {
   width: 65%;
   height: 12em;
-  background-color: grey;
+  color: white;
   padding: 4px;
   margin: 0.75% auto;
   border-radius: 5px;
+  transition: all .2s ease-in-out;
+    &:hover{
+      transform: scale(1.02);
+      background-color: rgba(239, 239, 239, 0.95);
+      color: black;
+    }
 
   &__container-top {
     height: 100%;
@@ -19,6 +25,7 @@
         height: 100%;
         vertical-align: middle;
       }
+
       img {
         vertical-align: middle;
         height: 11em;
@@ -29,26 +36,44 @@
     &__summary {
       width: 85%;
       display: grid;
-      grid-template-rows: 20% 20% 60%;
+      grid-template-rows: 40% 20% 40%;
+      padding: .5em;
 
       &__title-bar {
-        display: grid;
-        grid-template-columns: 65% 35%;
-
-        h2 {
+      
+        h1 {
           margin: 0;
+          float: left;
         }
 
         &__ratings {
+          float: right;
+          padding-top: .4em;
           vertical-align: middle;
+          span {
+            font-size: 1em;
+            font-weight: 700;
+            position: relative;
+            bottom: 0.2em;
+            margin-right: 1em;
+          }
           img {
-            height: 1.5em;
+            height: 1.2em;
             width: auto;
             margin: 0 5px 0 8px;
           }
         }
       }
 
+      &__actor-bar {
+        text-align: left;
+        padding: 4px 0;
+      }
+
+      &__description {
+        text-align: left;
+        padding: 4px 0;
+      }
     }
 
   }

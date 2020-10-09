@@ -29,6 +29,7 @@ const MovieCard = ({ movie }) => {
     Runtime,
     Ratings,
     Poster,
+    Plot,
   } = movie
 
   const sortedRatings = {
@@ -52,18 +53,30 @@ const MovieCard = ({ movie }) => {
         </div>
         <div className={summary}>
           <div className={titleBar}>
-            <h2>{Title}</h2>
+            <h1>{Title}</h1>
             <div className={ratings}>
-              <img src={IMDBLogo}/>
-              {sortedRatings.imdb}
-              <img src={MetaLogo}/>
-              {sortedRatings.mc}
-              <img src={RTLogo}/>
-              {sortedRatings.rt}
+              { sortedRatings.imdb && (<>
+                <img src={IMDBLogo}/>
+                <span>{sortedRatings.imdb}</span>
+              </>)}
+              { sortedRatings.mc && (<>
+                <img src={MetaLogo}/>
+                <span>{sortedRatings.mc}</span>
+              </>)}
+              { sortedRatings.rt && (<>
+                <img src={RTLogo}/>
+                <span>{sortedRatings.rt}</span>
+              </>)}
             </div>
           </div>
-          <div className={actorBar}></div>
-          <div className={description}></div>
+          <div className={actorBar}>
+            <b>Actors: </b>
+            <span>{Actors}</span>
+          </div>
+          <div className={description}>
+            <b>Plot: </b>
+            {Plot}
+          </div>
         </div>
       </div>
     </div>

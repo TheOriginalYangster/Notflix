@@ -1,5 +1,3 @@
-# Notflix
-
 ![Notflix](https://i.imgur.com/k6gXY5U.png)
 
 A new, sleek movie-searching platform!

@@ -35,7 +35,9 @@ export const submitSearch = () => {
       //I built the card components with specific title query results, and don't have access to all the data for the component from basic searches.....................
       //So, i'm just going to send a query for all the data for each result, since it's pretty late.
       console.log('results', results)
-      const finalResults = await Promise.all(results.map(({ Title }) => fetch(`${movieUrl}&t=${Title}`).then(r => r.json())))
+      const secondResponse = await Promise.all(results.map(({ Title, Year }) => fetch(`${movieUrl}&t=${Title}&y=${Year}`).then(r => r.json())))
+      const finalResults = secondResponse.filter((mov: any) => mov.Response === "True")
+
       console.log('res2', finalResults)
       dispatch(dataRecieved(finalResults))
 

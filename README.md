@@ -18,6 +18,7 @@ A new, sleek movie-searching platform!
 **React Router**
 
 **SASS**
+
 I work pretty heavily with both of these.  
 
 **react-multi-carousel**

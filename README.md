@@ -7,7 +7,7 @@ A new, sleek movie-searching platform!
 2. Extract
 3. Run the commands:
 >npm install
-npm start
+>npm start
 
 ## Notes 
 

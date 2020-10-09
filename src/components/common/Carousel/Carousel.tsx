@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppState } from '../../../store/reducer'
+
 
 import Slider from 'react-slick'
 import Carousel from 'react-multi-carousel'
-import initialMovies from '../../../static/initialMovies.json'
 import MoviePoster from './MoviePoster/MoviePoster'
 import './Carousel.scss'
 import "react-multi-carousel/lib/styles.css"
 const CarouselComponent = () => {
+
+  const state = useSelector<AppState, AppState>(state => state)
+  const { carouselMovies } = state
 
   const settings = {
     swipeable: false,
@@ -35,15 +40,16 @@ const CarouselComponent = () => {
     }
   };
 
-  const moviePosters = initialMovies.map(movie => <MoviePoster movie={movie} key={movie.imdbID}/>)
-
-  return (
-    <div className="carousel">
-      <Carousel responsive={responsive} {...settings}>
-        { moviePosters }
-      </Carousel>
-    </div>
-  )
+  if(carouselMovies){
+    const moviePosters = carouselMovies.map(movie => <MoviePoster movie={movie} key={movie.imdbID}/>)
+    return (
+      <div className="carousel">
+        <Carousel responsive={responsive} {...settings}>
+          { moviePosters }
+        </Carousel>
+      </div>
+    )
+  } else return null
 }
 
 export default CarouselComponent

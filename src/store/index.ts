@@ -13,7 +13,7 @@ export const createStore = () => {
     reducer,
     middleware: defaultMiddleware,
     preloadedState: {
-      app: initialState
+      ...initialState
     }
   });
   

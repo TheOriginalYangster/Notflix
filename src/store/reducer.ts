@@ -1,5 +1,7 @@
 import { AnyAction } from "redux";
 import { createSlice } from "@reduxjs/toolkit";
+import initialMovies from '../static/initialMovies.json'
+import shuffle from 'shuffle-array'
 
 export type AppState = {
   loading: boolean;
@@ -13,7 +15,7 @@ export const initialState: AppState = {
   loading: false,
   error: false,
   data: [],
-  carouselMovies: [],
+  carouselMovies: initialMovies,
   searchText: '',
 };
 
@@ -23,11 +25,13 @@ export const reducer = (state, action) => {
     case "SEARCH_INPUT_CHANGE":
       return { ...state, searchText: payload }
     case "SEARCH_SENT":
-      return { ...state, loading: true }
+      return { ...state, error: false, data: [] }
     case "DATA_RECIEVED":
-      return { ...state, loading: false, data: payload }
+      return { ...state, data: payload }
     case "BAD_SEARCH":
-      return { ...state, loading: false, }
+      return { ...state, error: true, data: [] }
+    case "ADD_TO_CAROUSEL":
+      return { ...state, carouselMovies: shuffle([...state.carouselMovies, payload])}
     default:
       return state
   }

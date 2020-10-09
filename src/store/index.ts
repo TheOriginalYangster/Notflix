@@ -1,5 +1,5 @@
 import * as React from "react";
-import { initialState, appSlice } from "./reducer";
+import { initialState, reducer } from "./reducer";
 import {
   combineReducers,
   configureStore,
@@ -7,10 +7,6 @@ import {
 } from "@reduxjs/toolkit";
 
 const defaultMiddleware = getDefaultMiddleware({ thunk: true });
-
-export const reducer = combineReducers({
-  app: appSlice.reducer
-});
 
 export const createStore = () => {
   const store = configureStore({
@@ -20,6 +16,10 @@ export const createStore = () => {
       app: initialState
     }
   });
-
+  
   return store;
 };
+
+// export const reducer = combineReducers({
+//   app: appSlice.reducer
+// });

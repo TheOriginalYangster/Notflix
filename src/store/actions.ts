@@ -1,5 +1,7 @@
 import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 
+export const inputChanged = createAction<string>("SEARCH_INPUT_CHANGE");
+export const submitSearch = createAction("SEARCH_SUBMIT");
 export const buttonClicked = createAction("app/buttonClicked");
 
 

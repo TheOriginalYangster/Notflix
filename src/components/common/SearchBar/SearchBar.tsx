@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-
-
+import { useDispatch, useSelector } from 'react-redux'
 import searchIcon from '../../../static/images/searchIcon.png'
-
+import { inputChanged, submitSearch } from '../../../store/actions'
+import { AppState } from '../../../store/reducer'
 
 import './SearchBar.scss'
 
@@ -10,14 +10,22 @@ import './SearchBar.scss'
 
 const SearchBar = () => {
 
+  const dispatch = useDispatch()
+  const state = useSelector<AppState, AppState>(state => state)
+
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log('Submit')
+    dispatch(submitSearch())
+  }
+
+  const onChange = (e) => {
+    if(e.keycode === 13) dispatch(submitSearch())
+    else dispatch(inputChanged(e.target.value))
   }
 
   return (
     <form className="search-bar-container">
-      <input className="search-bar">
+      <input className="search-bar" onChange={onChange}>
       </input>
       <button className="search-button" onClick={onSubmit}>
         <img src={searchIcon} />

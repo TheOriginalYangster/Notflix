@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { Dispatch } from "redux";
 
 
-import { AppStateSlice, AppState } from "../store/reducer";
+import { AppState } from "../store/reducer";
 import { fetchMovies } from "../store/actions";
 
 import { Button } from "./common/Button";
@@ -12,7 +12,7 @@ import AppRoutes from "../routes/AppRoutes";
 import Header from "./layout/Header/Header"
 
 export function App() {
-  const state = useSelector<AppState, AppStateSlice>((state) => state.app);
+  const state = useSelector<AppState, AppState>((state) => state);
 
   useEffect(() => {
     console.log('app mounted')

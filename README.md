@@ -1,8 +1,5 @@
-![Notflix](https://i.imgur.com/k6gXY5U.png)
-
+# ![Notflix](https://i.imgur.com/13NIRIb.png)
 A new, sleek movie-searching platform!
-
- ![Notflix](https://i.imgur.com/13NIRIb.png)
 
 ## Install
 1. Download the zip file

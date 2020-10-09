@@ -2,6 +2,8 @@
 
 A new, sleek movie-searching platform!
 
+ ![Notflix](https://i.imgur.com/13NIRIb.png)
+
 ## Install
 1. Download the zip file
 2. Extract
